@@ -12,8 +12,8 @@ import {
 } from '@nestjs/common';
 import { EmployeesService } from './employees.service';
 import * as client from '@prisma/client';
-import { ApiKeyAuthGuard } from 'src/auth/api-key-auth.guard';
-import { AuthUser } from 'src/auth/auth-user.decorator';
+import { ApiKeyAuthGuard } from '../auth/api-key-auth.guard';
+import { AuthUser } from '../auth/auth-user.decorator';
 
 @UseGuards(ApiKeyAuthGuard)
 @Controller('employees')

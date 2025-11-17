@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ApiKeyAuthGuard } from './api-key-auth.guard';
-import { ApiKeyModule } from 'src/api-key/api-key.module';
+import { ApiKeyModule } from '../api-key/api-key.module';
 
 @Module({
   imports: [ApiKeyModule],
