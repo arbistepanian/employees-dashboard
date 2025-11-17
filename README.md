@@ -48,9 +48,9 @@ starter kit, or internal tool.
 
 ### **Frontend**
 
--   Next.js 14 (App Router)
--   React 18
--   TailwindCSS (if added)
+-   Next.js (App Router)
+-   React
+-   TailwindCSS
 -   Fetch API with `/api/employees` route proxy
 -   SidePanel & reusable form components
 
@@ -61,7 +61,6 @@ starter kit, or internal tool.
 -   Neon Postgres\
 -   API Key Auth Guard\
 -   Modular architecture\
--   Zod or class-validator (optional)
 
 ---
 
@@ -97,11 +96,10 @@ Create a `.env` file:
 ```env
 # API
 DATABASE_URL="postgresql://..."
-EMPLOYEES_API_BASE_URL="https://your-nest-api-url"
-EMPLOYEES_API_KEY="your-seeded-api-key"
+PORT=your-desired-port
 
 # Frontend
-NEXT_PUBLIC_API_BASE_URL="https://your-nest-api-url"
+EMPLOYEES_API_BASE_URL="https://your-nest-api-url"
 EMPLOYEES_API_KEY="your-seeded-api-key"
 ```
 
@@ -118,7 +116,7 @@ npm install
 ### Run the API:
 
 ```bash
-cd api
+cd employees-api
 npx prisma migrate dev
 npm run start:dev
 ```
@@ -132,7 +130,7 @@ npx ts-node prisma/seed.ts
 ### Run the Next.js Dashboard:
 
 ```bash
-cd app
+cd employees-app
 npm run dev
 ```
 
