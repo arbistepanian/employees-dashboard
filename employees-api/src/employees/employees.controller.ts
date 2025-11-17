@@ -29,8 +29,13 @@ export class EmployeesController {
   }
 
   @Get()
-  findAll(@AuthUser() user: client.User, @Query('q') q?: string) {
-    return this.employeesService.findAll(user.id, q);
+  findAll(
+    @AuthUser() user: client.User,
+    @Query('q') q?: string,
+    @Query('page', ParseIntPipe) page = 1,
+    @Query('limit', ParseIntPipe) limit = 10,
+  ) {
+    return this.employeesService.findAll(user.id, q, page, limit);
   }
 
   @Get(':id')

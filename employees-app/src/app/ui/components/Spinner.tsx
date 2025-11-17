@@ -1,5 +1,5 @@
 export default function Spinner({
-    size = 12,
+    size = 6,
     color,
     showMask = false,
 }: {

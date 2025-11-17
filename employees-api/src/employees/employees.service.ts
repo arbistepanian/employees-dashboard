@@ -12,14 +12,38 @@ export class EmployeesService {
     });
   }
 
-  async findAll(userId: number, q?: string) {
+  async findAll(userId: number, q?: string, page = 1, limit = 10) {
     const filters: Prisma.EmployeeWhereInput = q
       ? { OR: [{ firstName: { contains: q } }, { lastName: { contains: q } }] }
       : {};
 
-    return this.databaseService.employee.findMany({
-      where: { ...filters, createdById: userId },
-    });
+    const where: Prisma.EmployeeWhereInput = {
+      ...filters,
+      createdById: userId,
+    };
+
+    const take = Math.max(1, Math.min(100, Number(limit) || 10));
+    const currentPage = Math.max(1, Number(page) || 1);
+    const skip = (currentPage - 1) * take;
+
+    const [total, items] = await Promise.all([
+      this.databaseService.employee.count({ where }),
+      this.databaseService.employee.findMany({
+        where,
+        skip,
+        take,
+        orderBy: { id: 'asc' },
+      }),
+    ]);
+
+    const hasMore = currentPage * take < total;
+
+    return {
+      items,
+      total,
+      page: currentPage,
+      hasMore,
+    };
   }
 
   async findOne(userId: number, id: number) {
