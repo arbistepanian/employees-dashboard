@@ -2,9 +2,10 @@
 
 A lightweight employee management system built with a modern stack:
 
--   **NestJS + Prisma + PostgreSQL** (Neon) for the backend API\
--   **Next.js App Router** for the frontend dashboard\
--   **API Key Authentication** for simple and secure access\
+-   **NestJS + Prisma + PostgreSQL** (Neon) for the backend API
+-   **Next.js App Router** for the frontend dashboard
+-   **React and Tailwind CSS** on the frontend
+-   **API Key Authentication** for simple and secure access
 -   **Vercel-ready** monorepo deployment (frontend + backend in one
     repo)
 
@@ -17,29 +18,28 @@ starter kit, or internal tool.
 
 ### **Backend (NestJS + Prisma + PostgreSQL)**
 
--   CRUD for employees\
--   API Key authentication (bearer token)\
--   Prisma ORM with Neon Postgres\
--   Modular structure (PrismaModule, ApiKeyModule, AuthModule,
-    EmployeesModule)\
--   Includes seed script for initial API key + user\
--   Typed DTOs and services\
+-   CRUD for employees
+-   API Key authentication (bearer token)
+-   Prisma ORM with Neon Postgres
+-   Modular structure (PrismaModule, ApiKeyModule, AuthModule, EmployeesModule)
+-   Includes seed script for initial API key + user
+-   Typed DTOs and services
 -   Ready for Vercel Serverless Functions (via nest build)
 
 ### **Frontend (Next.js)**
 
--   Dashboard to view, create, update, delete employees\
--   Side panel UI for Add/Edit forms\
--   Client-side updates without page reload\
--   Clean, modern UI components\
--   API proxy routes protecting the API key\
+-   Dashboard to view, create, update, delete employees
+-   Side panel UI for Add/Edit forms
+-   Client-side updates without page reload
+-   Clean, modern UI components
+-   API proxy routes protecting the API key
 -   Fully responsive layout
 
 ### **Dev Experience**
 
--   Single GitHub repo for both API + Dashboard\
--   Easy environment setup\
--   Simple Vercel deployment\
+-   Single GitHub repo for both API + Dashboard
+-   Easy environment setup
+-   Simple Vercel deployment
 -   Hot reload with `npm run dev`
 
 ---
@@ -56,11 +56,11 @@ starter kit, or internal tool.
 
 ### **Backend**
 
--   NestJS\
--   Prisma ORM\
--   Neon Postgres\
--   API Key Auth Guard\
--   Modular architecture\
+-   NestJS
+-   Prisma ORM
+-   Neon Postgres
+-   API Key Auth Guard
+-   Modular architecture
 
 ---
 
@@ -171,7 +171,7 @@ This repo is designed to deploy easily:
 
 ### Deploy Nest API to Vercel Serverless Functions:
 
-Inside `api/` folder:
+Inside `employees-api/` folder:
 
 -   Set `"build": "nest build"`\
 -   Vercel will detect serverless functions inside `api/dist/main.js`
@@ -182,19 +182,19 @@ Set environment variables in Vercel dashboard.
 
 ## 🧹 **API Routes**
 
-### **GET /employees**
+### **GET /api/employees**
 
 Returns all employees
 
-### **POST /employees**
+### **POST /api/employees**
 
 Create an employee
 
-### **PATCH /employees/:id**
+### **PATCH /api/employees/:id**
 
 Update an employee
 
-### **DELETE /employees/:id**
+### **DELETE /api/employees/:id**
 
 Delete an employee
 
@@ -204,9 +204,11 @@ Authentication is via:
 
 ---
 
-## 🎨 **Screenshots (Optional)**
+## 🎨 **Demo**
 
-_Add your Sora hero image or dashboard screenshots here._
+🔗 [Live Preview on Vercel](https://employees-app-rb.vercel.app)
+
+![Homepage Screenshot](./employees-app/public/screenshot-01.jpg)
 
 ---
 
