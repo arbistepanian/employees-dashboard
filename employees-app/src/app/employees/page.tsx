@@ -109,7 +109,7 @@ export default function EmployeesPage() {
 
     return (
         <Page title="Employees">
-            <div className="w-full flex justify-between items-center mt-4 mb-10">
+            <div className="w-full flex justify-between items-center mt-4 mb-4">
                 {isLoading ? (
                     <div className="flex justify-start items-center gap-2">
                         <Spinner />
@@ -132,22 +132,16 @@ export default function EmployeesPage() {
 
             {!error && employees.length > 0 && (
                 <>
-                    <table className="mt-4 w-full">
+                    <table className="w-full mb-4">
                         <thead>
-                            <tr>
-                                <th className="text-left border-b border-(--color-border)">
+                            <tr className="rounded-md bg-(--color-surface-alt)">
+                                <th className="p-2 text-left rounded-tl-md rounded-bl-md">
                                     ID
                                 </th>
-                                <th className="text-left border-b border-(--color-border)">
-                                    Name
-                                </th>
-                                <th className="text-left border-b border-(--color-border)">
-                                    Email
-                                </th>
-                                <th className="text-left border-b border-(--color-border)">
-                                    Role
-                                </th>
-                                <th className="w-30 text-right border-b border-(--color-border)">
+                                <th className="p-2 text-left">Name</th>
+                                <th className="p-2 text-left">Email</th>
+                                <th className="p-2 text-left">Role</th>
+                                <th className="w-30 p-2 text-right  rounded-tr-md rounded-br-md">
                                     Actions
                                 </th>
                             </tr>
@@ -155,13 +149,13 @@ export default function EmployeesPage() {
                         <tbody>
                             {employees.map((e) => (
                                 <tr key={e.id}>
-                                    <td className="py-2">{e.id}</td>
-                                    <td>
+                                    <td className="p-2">{e.id}</td>
+                                    <td className="p-2">
                                         {e.firstName} {e.lastName}
                                     </td>
-                                    <td>{e.email}</td>
-                                    <td>{e.role}</td>
-                                    <td className="text-right space-x-2">
+                                    <td className="p-2">{e.email}</td>
+                                    <td className="p-2">{e.role}</td>
+                                    <td className="p-2 text-right space-x-2">
                                         <Button
                                             variation="ghost"
                                             type="button"

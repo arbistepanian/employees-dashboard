@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Button from "./Button";
+import Paragraph from "./Paragraph";
 
 export default function Pagination({
     currentPage,
@@ -41,12 +42,17 @@ export default function Pagination({
                 variation="secondary"
                 icon="arrowLeft"
                 disabled={page == 1}
-                onClick={handlePrevPage}></Button>
+                onClick={handlePrevPage}
+            />
+            <Paragraph variant="muted">
+                Page {currentPage} of {totalPages}
+            </Paragraph>
             <Button
                 variation="secondary"
                 icon="arrowRight"
                 disabled={page == totalPages}
-                onClick={handleNextPage}></Button>
+                onClick={handleNextPage}
+            />
         </div>
     );
 }
