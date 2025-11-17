@@ -4,7 +4,7 @@ import { cn } from "@/app/lib/utils";
 import Header from "./Header";
 
 interface PageProps extends React.HTMLAttributes<HTMLDivElement> {
-    title?: string;
+    title: string;
     className?: string;
     children: React.ReactNode;
 }
